@@ -1,8 +1,9 @@
-import Cart from "../model/addToCart.js"
+import Cart from "../model/cart.js"
+
 
 export const addToCart=async(req,res)=>{
     try {
-        const response= new Cart(req.body)
+        const response= new  Cart(req.body)
         await response.save()
         res.status(201).json({Message:"Succesfully Added",data:response})
     } catch (error) {
